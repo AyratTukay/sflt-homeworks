@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
     ubuntu_host1.vm.hostname = 'ubuntu-host1'
     ubuntu_host1.vm.box_url = "ubuntu/xenial64"
 
-    ubuntu_host1.vm.network :public_network, bridge: "wlp4s0", ip: "192.168.56.101"
+    ubuntu_host1.vm.network :public_network, bridge: "enp0s3", ip: "192.168.110.101"
 
     ubuntu_host1.vm.provider :virtualbox do |v|
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
     ubuntu_host2.vm.hostname = 'ubuntu-host2'
     ubuntu_host2.vm.box_url = "ubuntu/xenial"
 
-    ubuntu_host2.vm.network :public_network, bridge: "wlp4s0", ip: "192.168.56.102"
+    ubuntu_host2.vm.network :public_network, bridge: "enp0s3", ip: "192.168.110.102"
 
     ubuntu_host2.vm.provider :virtualbox do |v|
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
